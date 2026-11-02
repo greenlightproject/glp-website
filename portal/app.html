@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mitgliederbereich — Green Light Project</title>
+<link rel="stylesheet" href="../assets/css/fonts.css" />
+  <link rel="stylesheet" href="css/portal.css?v=27">
+<script src="../assets/js/vendor/supabase-2.117.3.js"></script>
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-logo">
+        <img src="../assets/images/GLP-logo.svg" alt="GLP">
+      </div>
+      <hr class="sidebar-divider">
+      <ul class="sidebar-nav" id="sidebar-nav"></ul>
+    </aside>
+
+    <header class="topbar">
+      <button class="hamburger-btn" id="hamburger-btn" aria-label="Menü öffnen">☰</button>
+      <div class="topbar-user">
+        <img id="user-avatar" src="" alt="">
+        <span id="user-name"></span>
+        <button class="topbar-logout" id="logout-btn">Abmelden</button>
+      </div>
+    </header>
+
+    <main class="content" id="content"></main>
+  </div>
+
+  <script src="js/supabase-config.js?v=27"></script>
+  <script src="js/auth.js?v=27"></script>
+  <script src="js/rich-text.js?v=27"></script>
+  <script src="js/components/sidebar.js?v=27"></script>
+  <script src="js/pages/news.js?v=27"></script>
+  <script src="js/pages/calendar.js?v=27"></script>
+  <script src="js/pages/mein-kalender.js?v=27"></script>
+  <script src="js/pages/library.js?v=27"></script>
+  <script src="js/pages/network.js?v=27"></script>
+  <script src="js/pages/profile.js?v=27"></script>
+  <script src="js/pages/workspace.js?v=27"></script>
+  <script src="js/pages/admin.js?v=27"></script>
+  <script src="js/pages/admin-blog.js?v=27"></script>
+  <script src="js/router.js?v=27"></script>
+  <script>
+    const PLACEHOLDER_AVATAR = 'data:image/svg+xml;utf8,' + encodeURIComponent(
+      '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 34 34"><rect width="34" height="34" rx="8" fill="#dff0c8"/><text x="17" y="22" font-size="14" text-anchor="middle" fill="#1d4810" font-family="sans-serif">?</text></svg>'
+    );
+
+    (async () => {
+      const { session, member } = await getSessionAndMember();
+
+      if (!session || !member) {
+        window.location.href = 'index.html';
+        return;
+      }
+
+      document.getElementById('user-name').textContent = member.name || member.email;
+      const avatarUrl = member.profile_picture_url || member.google_photo_url || PLACEHOLDER_AVATAR;
+      document.getElementById('user-avatar').src = avatarUrl;
+
+      renderSidebar(member.is_admin);
+
+      document.getElementById('logout-btn').addEventListener('click', signOut);
+
+      const hamburgerBtn = document.getElementById('hamburger-btn');
+      const sidebar = document.getElementById('sidebar');
+      hamburgerBtn.addEventListener('click', () => sidebar.classList.toggle('open'));
+      document.getElementById('sidebar-nav').addEventListener('click', () => sidebar.classList.remove('open'));
+
+      initRouter({ session, member });
+    })();
+  </script>
+</body>
+</html>

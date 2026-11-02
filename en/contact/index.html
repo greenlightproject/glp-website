@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact – Green Light Project</title>
+  <meta name="description" content="Questions about workshops, getting involved or working together? Write to us via the contact form, we&#x27;ll reply within a few days." />
+  <link rel="canonical" href="https://greenlightproject.eu/en/contact/" />
+  <link rel="alternate" hreflang="de" href="https://greenlightproject.eu/kontakt/" />
+  <link rel="alternate" hreflang="en" href="https://greenlightproject.eu/en/contact/" />
+  <link rel="alternate" hreflang="x-default" href="https://greenlightproject.eu/kontakt/" />
+  <link rel="icon" href="/favicon.ico" sizes="48x48" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Contact – Green Light Project" />
+  <meta property="og:description" content="Questions about workshops, getting involved or working together? Write to us via the contact form, we&#x27;ll reply within a few days." />
+  <meta property="og:site_name" content="Green Light Project" />
+  <meta property="og:url" content="https://greenlightproject.eu/en/contact/" />
+  <meta property="og:locale" content="en_GB" />
+  <meta property="og:image" content="https://greenlightproject.eu/assets/images/social/share.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="stylesheet" href="/assets/css/fonts.css" />
+  <link rel="stylesheet" href="/assets/css/style.css" />
+  <link rel="stylesheet" href="/assets/css/glp.css" />
+</head>
+
+<body class="glp">
+  <nav>
+    <div class="nav-inner">
+      <a class="nav-logo" href="/en/">
+        <img src="/assets/images/GLP-logo.svg" alt="Green Light Project">
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="/en/">Home</a></li>
+        <li><a href="/en/get-involved/">Get Involved</a></li>
+        <li><a href="/en/partners/">Partners</a></li>
+        <li><a href="/en/about-us/">About Us</a></li>
+        <li><a href="/en/blog/">Blog</a></li>
+        <li><a href="/en/contact/" class="active">Contact</a></li>
+        <li><a href="/portal/">Member Login</a></li>
+      </ul>
+      <div class="nav-right">
+        <a class="lang-toggle" href="/kontakt/" hreflang="de" lang="de">DE</a>
+        <button class="hamburger" id="hamburger" aria-label="Menü"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </nav>
+
+  <section class="page-hero">
+    <div class="page-hero-content">
+      <h1 class="active" data-lang="en">Contact</h1>
+      <p class="active" data-lang="en">Want to know more? Write to us or use our contact form!</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="kontakt-grid">
+        <div class="kontakt-card">
+          <h3 class="active" data-lang="en">For Students</h3>
+          <p class="active" data-lang="en">Want to find out more or become part of our initiative? Just send us a short email at <a
+              href="mailto:info@greenlightproject.eu">info@greenlightproject.eu</a> or use our contact/application form
+            — we'll get back to you as soon as possible.</p>
+        </div>
+        <div class="kontakt-card">
+          <h3 class="active" data-lang="en">For Partnership Enquiries</h3>
+          <p class="active" data-lang="en">Interested in collaborating or providing expert
+            support? Please directly contact our Head of Association, Helena Ziegler, at <a
+              href="mailto:helena.ziegler@greenlightproject.eu">helena.ziegler@greenlightproject.eu</a>.</p>
+        </div>
+      </div>
+
+      <h2 class="section-title" style="margin-bottom:1.5rem;"><span class="active"
+          data-lang="en">Contact Form</span></h2>
+
+      <div class="native-form">
+        <form id="kontakt-form" onsubmit="submitGlpForm(event, 'kontakt', { de: 'Vielen Dank! Wir melden uns bald.', en: 'Thank you! We will be in touch soon.' })">
+
+          <!-- spam trap: hidden from people, bots tend to fill it -->
+          <div style="position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden;" aria-hidden="true">
+            <label>Website <input type="text" name="website" tabindex="-1" autocomplete="off"></label>
+          </div>
+
+
+          <div class="form-row">
+            <div class="form-group">
+              <label id="label-name">Vor- und Nachname <span class="req">*</span></label>
+              <input type="text" name="name" required id="input-name" placeholder="Dein Name" />
+            </div>
+            <div class="form-group">
+              <label>E-Mail <span class="req">*</span></label>
+              <input type="email" name="email" required id="input-email" placeholder="deine@email.com" />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label id="label-anliegen">Dein Anliegen <span class="req">*</span></label>
+            <textarea name="anliegen" required id="input-anliegen" placeholder="Wie können wir dir helfen?"></textarea>
+          </div>
+
+          <p class="form-notice active" data-lang="en">* Required field.</p>
+          <p class="form-notice form-privacy active" data-lang="en">We only use your details to reply to you. More in our <a href="/en/privacy/">privacy policy</a>.</p>
+
+          <div class="form-submit">
+            <button type="submit" class="btn btn-primary">
+              <span class="active" data-lang="en">Submit</span>
+            </button>
+          </div>
+        </form>
+      </div>
+
+      <script>
+        function updateFormLang(lang) {
+          const isEN = lang === 'en';
+          document.getElementById('label-name').innerHTML = (isEN ? 'Full Name' : 'Vor- und Nachname') + ' <span class="req">*</span>';
+          document.getElementById('input-name').placeholder = isEN ? 'Your name' : 'Dein Name';
+          document.getElementById('input-email') && (document.getElementById('input-email').placeholder = isEN ? 'your@email.com' : 'deine@email.com');
+          document.getElementById('label-anliegen').innerHTML = (isEN ? 'Your message' : 'Dein Anliegen') + ' <span class="req">*</span>';
+          document.getElementById('input-anliegen').placeholder = isEN ? 'How can we help you?' : 'Wie können wir dir helfen?';
+        }
+        document.addEventListener('DOMContentLoaded', () => {
+          updateFormLang(document.documentElement.lang);
+        });
+      </script>
+    </div>
+    </div>
+  </section>
+
+  <footer>
+    <hr class="glp-rule glp-rule-top" />
+    <div class="footer-inner">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h5>GLP</h5>
+          <ul>
+            <li><a href="/impressum/">Imprint</a></li>
+            <li><a href="/en/privacy/">Privacy</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Socials</h5>
+          <ul>
+            <li><a href="https://www.linkedin.com/company/greenlightproject" target="_blank">LinkedIn</a></li>
+            <li><a href="https://www.instagram.com/greenlightproject.eu/" target="_blank">Instagram</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>CONTACT</h5>
+          <ul>
+            <li><a href="/en/contact/">Contact Form</a></li>
+            <li><a href="mailto:info@greenlightproject.eu">info@greenlightproject.eu</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-copy">© 2026 Green Light Project. <span class="active" data-lang="en">All rights reserved.</span></div>
+    </div>
+    <hr class="glp-rule" />
+    <div class="footer-inner"><div class="glp-wordmark" aria-hidden="true">Green Light <em>Project</em></div></div>
+  </footer>
+  <script src="/assets/js/form-submit.js"></script>
+  <script src="/assets/js/main.js"></script>
+</body>
+
+</html>

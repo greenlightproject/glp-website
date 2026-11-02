@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GLP Blog – Consent, Boundaries &amp; Relationships</title>
+  <meta name="robots" content="noindex" data-template />
+  <!--@head-->
+  <link rel="stylesheet" href="/assets/css/fonts.css" />
+  <link rel="stylesheet" href="/assets/css/style.css" />
+  <link rel="stylesheet" href="/assets/css/glp.css" />
+  <style>
+    .blog-section { padding: 2.5rem 0 5rem; }
+    .blog-filter-pills { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-bottom: 2rem; }
+    .blog-filter-pill { font-family: inherit; font-size: 0.82rem; font-weight: 700; padding: 0.55rem 1.2rem; border-radius: 100px; border: 1px solid var(--glass-border); background: var(--glass-bg); color: var(--text-secondary); cursor: pointer; transition: background 0.2s, color 0.2s, border-color 0.2s; }
+    .blog-filter-pill:hover { border-color: var(--green-deep); }
+    .blog-filter-pill.active { background: var(--green-dark); color: #fff; border-color: var(--green-dark); }
+    .blog-list { display: flex; flex-direction: column; gap: 1.25rem; }
+    .blog-card { display: block; background: var(--glass-bg); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid var(--glass-border); border-radius: 18px; padding: 2rem 2.5rem; text-decoration: none; color: inherit; transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s; }
+    .blog-card:hover { border-color: var(--green-deep); transform: translateY(-2px); box-shadow: 0 8px 32px rgba(29,72,16,0.08); text-decoration: none; }
+    .blog-card-header { display: flex; align-items: center; justify-content: space-between; gap: 1rem; margin-bottom: 0.7rem; }
+    .blog-card-tag { display: inline-block; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--terracotta); }
+    .blog-card-date { font-size: 0.78rem; color: var(--text-muted); white-space: nowrap; }
+    .blog-card h2 { font-size: 1.65rem; font-weight: 800; color: var(--green-dark); letter-spacing: -0.025em; margin-bottom: 0.2rem; }
+    .blog-card-excerpt { font-size: 0.95rem; color: var(--text-secondary); line-height: 1.72; margin-bottom: 1.1rem; }
+    .blog-card-cta { display: inline-flex; align-items: center; gap: 0.3rem; font-size: 0.875rem; font-weight: 700; color: var(--green-dark); text-decoration: none; }
+    .blog-card:hover .blog-card-cta { text-decoration: underline; }
+    .blog-empty { color: var(--text-muted); }
+  </style>
+</head>
+
+<body class="glp">
+
+  <nav>
+    <div class="nav-inner">
+      <a class="nav-logo" href="/en/">
+        <img src="/assets/images/GLP-logo.svg" alt="Green Light Project" />
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="/en/">Home</a></li>
+        <li><a href="/en/get-involved/">Get Involved</a></li>
+        <li><a href="/en/partners/">Partners</a></li>
+        <li><a href="/en/about-us/">About Us</a></li>
+        <li><a href="/en/blog/" class="active">Blog</a></li>
+        <li><a href="/en/contact/">Contact</a></li>
+        <li><a href="/portal/">Member Login</a></li>
+      </ul>
+      <div class="nav-right">
+        <!--@langswitch-->
+        <button class="hamburger" id="hamburger" aria-label="Menü"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </nav>
+
+  <section class="page-hero">
+    <div class="page-hero-content">
+      <h1 class="active" data-lang="en">GLP Blog</h1>
+      <p class="active" data-lang="en">Background knowledge on consent, communication and sexual self-determination</p>
+    </div>
+  </section>
+
+  <section class="blog-section">
+    <div class="container">
+      <div class="blog-filter-pills" id="blogFilterPills"><!--@pills--></div>
+      <div class="blog-list" id="blogList"><!--@cards--></div>
+    </div>
+  </section>
+
+  <hr class="glp-rule" />
+
+  <section class="help-section">
+    <div class="container">
+      <h2 class="section-title"><span class="active" data-lang="en">Local help resources</span></h2>
+      <p class="help-intro active" data-lang="en">Overviews of counselling and support services in different cities – read online or download as a PDF.</p>
+      <div class="help-list" id="helpList"><!--@help--></div>
+    </div>
+  </section>
+
+  <footer>
+    <hr class="glp-rule glp-rule-top" />
+    <div class="footer-inner">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h5>GLP</h5>
+          <ul>
+            <li><a href="/impressum/">Imprint</a></li>
+            <li><a href="/en/privacy/">Privacy</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Socials</h5>
+          <ul>
+            <li><a href="https://www.linkedin.com/company/greenlightproject" target="_blank">LinkedIn</a></li>
+            <li><a href="https://www.instagram.com/greenlightproject.eu/" target="_blank">Instagram</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>CONTACT</h5>
+          <ul>
+            <li><a href="/en/contact/">Contact Form</a></li>
+            <li><a href="mailto:info@greenlightproject.eu">info@greenlightproject.eu</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-copy">© 2026 Green Light Project. <span class="active" data-lang="en">All rights reserved.</span></div>
+    </div>
+    <hr class="glp-rule" />
+    <div class="footer-inner"><div class="glp-wordmark" aria-hidden="true">Green Light <em>Project</em></div></div>
+  </footer>
+
+  <script src="/assets/js/main.js"></script>
+  <script src="/assets/js/blog-filter.js"></script>
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title><!--@pagetitle--></title>
+  <meta name="robots" content="noindex" data-template />
+  <!--@head-->
+  <link rel="stylesheet" href="/assets/css/fonts.css" />
+  <link rel="stylesheet" href="/assets/css/style.css" />
+  <link rel="stylesheet" href="/assets/css/glp.css" />
+</head>
+
+<body class="glp">
+
+  <nav>
+    <div class="nav-inner">
+      <a class="nav-logo" href="/en/">
+        <img src="/assets/images/GLP-logo.svg" alt="Green Light Project">
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="/en/">Home</a></li>
+        <li><a href="/en/get-involved/">Get Involved</a></li>
+        <li><a href="/en/partners/">Partners</a></li>
+        <li><a href="/en/about-us/">About Us</a></li>
+        <li><a href="/en/blog/" class="active">Blog</a></li>
+        <li><a href="/en/contact/">Contact</a></li>
+        <li><a href="/portal/">Member Login</a></li>
+      </ul>
+      <div class="nav-right">
+        <!--@langswitch-->
+        <button class="hamburger" id="hamburger" aria-label="Menü"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ── ARTICLE HEADER ─────────────────────────────────────── -->
+  <header class="article-header">
+    <div class="article-body">
+      <a href="/en/blog/" class="article-back">
+        <span class="active" data-lang="en">← Back to Blog</span>
+      </a>
+      <span class="section-label" id="articleCategory"><!--@category--></span>
+      <h1><!--@title--></h1>
+    </div>
+  </header>
+
+  <!-- ── ARTICLE BODY ───────────────────────────────────────── -->
+  <section class="article-section">
+    <div class="article-body">
+      <hr class="article-divider" />
+
+      <div><!--@body--></div>
+
+      <p style="font-size: 0.85rem; color: var(--text-muted); font-style: italic;"><!--@byline--></p>
+
+      <!--@sources-->
+    </div>
+  </section>
+
+  <!-- ── FOOTER ──────────────────────────────────────────────── -->
+  <footer>
+    <hr class="glp-rule glp-rule-top" />
+    <div class="footer-inner">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h5>GLP</h5>
+          <ul>
+            <li><a href="/impressum/">Imprint</a></li>
+            <li><a href="/en/privacy/">Privacy</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Socials</h5>
+          <ul>
+            <li><a href="https://www.linkedin.com/company/greenlightproject" target="_blank">LinkedIn</a></li>
+            <li><a href="https://www.instagram.com/greenlightproject.eu/" target="_blank">Instagram</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>CONTACT</h5>
+          <ul>
+            <li><a href="/en/contact/">Contact Form</a></li>
+            <li><a href="mailto:info@greenlightproject.eu">info@greenlightproject.eu</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-copy">© 2026 Green Light Project. <span class="active" data-lang="en">All rights reserved.</span></div>
+    </div>
+    <hr class="glp-rule" />
+    <div class="footer-inner"><div class="glp-wordmark" aria-hidden="true">Green Light <em>Project</em></div></div>
+  </footer>
+
+  <script src="/assets/js/main.js"></script>
+</body>
+
+</html>

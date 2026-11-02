@@ -1,0 +1,6 @@
+# The site is plain static files published from this folder. The blog, its posts, the help
+# pages and /sitemap.xml are rendered by edge functions in netlify/edge-functions/.
+# Edge functions are only deployed with a Git-connected site or `netlify deploy` (CLI),
+# not with drag & drop in the Netlify UI.
+[build]
+  publish = "."

@@ -1,0 +1,17 @@
+# Old .html addresses -> clean URLs. The pages now live in folders (mitmachen/index.html etc.).
+/mitmachen.html     /mitmachen/     301
+/partner.html       /partner/       301
+/ueber-uns.html     /ueber-uns/     301
+/kontakt.html       /kontakt/       301
+/impressum.html     /impressum/     301
+/datenschutz.html   /datenschutz/   301
+# /blog/*.html and the old ?id= links are redirected by netlify/edge-functions/blog.js.
+
+# Files in this folder that are not part of the website
+/CLAUDE.md          /404.html       404!
+/netlify.toml       /404.html       404!
+/netlify/*          /404.html       404!
+/.claude/*          /404.html       404!
+
+# English "page not found" for missing /en/ addresses (/404.html is the default)
+/en/*               /en/404.html    404

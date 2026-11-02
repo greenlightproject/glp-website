@@ -3,6 +3,15 @@
 
 import { escapeHtml } from './site.js';
 
+// Inline links: [text](https://example.org) or [text](/blog/other-post/) inside a paragraph or bullet.
+// Only http(s) and site-internal links are turned into <a>; everything else stays plain text.
+function inlineHtml(text) {
+  return escapeHtml(text).replace(/\[([^\]\n]+)\]\(((?:https?:\/\/|\/)[^\s)]+)\)/g, (_, label, href) => {
+    const external = /^https?:/.test(href);
+    return `<a href="${href}"${external ? ' target="_blank" rel="noopener noreferrer"' : ''}>${label}</a>`;
+  });
+}
+
 // Splits body text on blank lines into blocks. A block entirely wrapped in
 // "**...**" becomes a subtitle (h3). Within any other block, lines starting
 // with "-", "*", or "•" become a bullet list; remaining lines are joined
@@ -27,14 +36,14 @@ export function renderBlogBody(text) {
 
     function flushParagraph() {
       if (paragraphLines.length) {
-        htmlParts.push(`<p>${escapeHtml(paragraphLines.join(' '))}</p>`);
+        htmlParts.push(`<p>${inlineHtml(paragraphLines.join(' '))}</p>`);
         paragraphLines = [];
       }
     }
 
     function flushList() {
       if (listItems.length) {
-        htmlParts.push('<ul class="article-list">' + listItems.map(i => `<li>${escapeHtml(i)}</li>`).join('') + '</ul>');
+        htmlParts.push('<ul class="article-list">' + listItems.map(i => `<li>${inlineHtml(i)}</li>`).join('') + '</ul>');
         listItems = [];
       }
     }

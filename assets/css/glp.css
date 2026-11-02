@@ -532,3 +532,12 @@ body.glp .form-privacy a { text-decoration: underline; }
 
 /* help detail page: intro, note and notice use the full width of the cards */
 body.glp .help-text, body.glp .help-note, body.glp .help-notice, body.glp .help-page-title { max-width: none; }
+
+/* ---- Blog post: "Mehr zum Thema" box ---- */
+body.glp .related-posts { margin-top: 3rem; padding-top: 2rem; border-top: 1px solid rgba(58,114,37,0.28); }
+body.glp .related-posts h2 { font-size: 1.25rem; font-weight: 800; color: var(--green-dark); letter-spacing: -0.02em; margin-bottom: 1rem; }
+body.glp .related-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; }
+body.glp .related-card { display: flex; flex-direction: column; gap: 0.5rem; padding: 1.1rem 1.25rem; border-radius: 14px; border: 1px solid rgba(58,114,37,0.28); background: rgba(255,255,255,0.45); text-decoration: none; color: inherit; transition: border-color 0.2s, transform 0.2s; }
+body.glp .related-card:hover { border-color: var(--green-deep); transform: translateY(-2px); text-decoration: none; }
+body.glp .related-tag { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #a8694a; }
+body.glp .related-title { font-size: 1rem; font-weight: 700; line-height: 1.4; color: var(--green-dark); }

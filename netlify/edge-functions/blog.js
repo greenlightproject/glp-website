@@ -130,7 +130,32 @@ async function postPage(url, lang, slug) {
     body: renderBlogBody(t(lang, post.body_de, post.body_en || post.body_de)),
     byline: escapeHtml(`– ${post.author}, ${formatDate(post.published_date, lang)}`),
     sources: renderBlogSources(post.sources),
+    related: relatedPosts(post, posts, categories, lang),
   }));
+}
+
+// "Mehr zum Thema" box: up to 3 other posts, those sharing a category first, then the newest ones.
+function relatedPosts(post, posts, categories, lang) {
+  const idsOf = p => (p.blog_post_categories || []).map(pc => pc.category_id);
+  const mine = idsOf(post);
+  const others = posts.filter(p => p.id !== post.id).sort((a, b) => String(b.published_date).localeCompare(String(a.published_date)));
+  const shared = others.filter(p => idsOf(p).some(id => mine.includes(id)));
+  const picks = shared.concat(others.filter(p => !shared.includes(p))).slice(0, 3);
+  if (!picks.length) return '';
+
+  const cards = picks.map(p => {
+    const tag = categories.filter(c => idsOf(p).includes(c.id)).map(c => t(lang, c.name_de, c.name_en)).join(' & ');
+    return `<a class="related-card" href="${blogPath(lang, postSlug(p, lang))}">
+          <span class="related-tag">${escapeHtml(tag)}</span>
+          <span class="related-title">${escapeHtml(t(lang, p.title_de, p.title_en || p.title_de))}</span>
+        </a>`;
+  }).join('\n        ');
+  return `<aside class="related-posts">
+      <h2>${t(lang, 'Mehr zum Thema', 'More on this topic')}</h2>
+      <div class="related-list">
+        ${cards}
+      </div>
+    </aside>`;
 }
 
 async function helpPage(url, lang, slug) {

@@ -81,20 +81,18 @@ a { color: var(--green-deep); text-decoration: none; }
 }
 
 .btn-primary {
-  background: var(--green-dark);
-  color: #fff;
-  box-shadow: 0 1px 0 rgba(255,255,255,0.16) inset, 0 4px 14px rgba(29,72,16,0.2);
+  background: transparent;
+  color: var(--green-dark);
+  border: 1.5px solid var(--green-dark);
 }
 
 .btn-primary:hover {
-  background: var(--green-deep);
+  background: rgba(255,255,255,0.6);
   transform: translateY(-1px);
-  box-shadow: 0 1px 0 rgba(255,255,255,0.2) inset, 0 8px 20px rgba(29,72,16,0.24);
 }
 
 .btn-primary:active {
   transform: translateY(0) scale(0.98);
-  box-shadow: 0 1px 0 rgba(255,255,255,0.12) inset, 0 3px 8px rgba(29,72,16,0.18);
 }
 
 .btn-secondary {

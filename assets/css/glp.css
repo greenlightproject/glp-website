@@ -576,3 +576,7 @@ body.glp .ziel-link .btn-glass { border: 1.5px solid var(--green-dark); backgrou
 body.glp .event-past { margin-bottom: 1.4rem; }
 body.glp .event-past h3 { font-size: clamp(1.25rem, 2vw, 1.6rem); font-weight: 800; letter-spacing: -0.02em; line-height: 1.25; color: var(--green-dark); margin: 0 0 0.3rem; }
 body.glp .event-past .event-sub { margin: 0; }
+
+/* ---- Buttons: all primary buttons use the outlined style ("Zu den Workshops") ---- */
+body.glp .btn-primary { background: transparent; color: var(--green-dark); border: 1.5px solid var(--green-dark); }
+body.glp .btn-primary:hover { background: rgba(247,244,238,0.85); color: var(--green-dark); border-color: var(--green-dark); text-decoration: none; transform: translateY(-1px); }

@@ -543,16 +543,33 @@ body.glp .related-tag { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.
 body.glp .related-title { font-size: 1rem; font-weight: 700; line-height: 1.4; color: var(--green-dark); }
 
 /* ---- Workshops für Schulen ---- */
-body.glp .g-work-first { padding-top: 9.5rem; }
 body.glp .flex-split { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 3.5rem; align-items: center; }
 body.glp .work-photo { margin: 0; border-radius: 22px; overflow: hidden; border: 1px solid rgba(58,114,37,0.28); aspect-ratio: 4 / 3; background: rgba(255,255,255,0.45); }
 body.glp .work-photo img { display: block; width: 100%; height: 100%; object-fit: cover; }
 body.glp .flex-txt h2 { margin-bottom: 1.2rem; }
-body.glp .flex-list { list-style: none; margin: 0 0 1.8rem; padding: 0; display: flex; flex-direction: column; gap: 0.9rem; }
-body.glp .flex-list li { font-size: 1rem; line-height: 1.65; }
-body.glp .flex-list strong { color: var(--green-dark); font-weight: 800; }
+body.glp .flex-text { font-size: 1.05rem; line-height: 1.8; margin: 0 0 1.8rem; }
+body.glp h2.glp-title.solid em { color: inherit; -webkit-text-stroke: 0; }
 @media (max-width: 900px) {
-  body.glp .g-work-first { padding-top: 8rem; }
   body.glp .flex-split { grid-template-columns: 1fr; gap: 2rem; }
   body.glp .work-photo { aspect-ratio: 4 / 3; border-radius: 16px; }
 }
+
+/* ---- Vorträge & Wissen (Startseite) ---- */
+body.glp .g-events .intro { max-width: 40rem; margin-bottom: 2.4rem; }
+body.glp .event-photos { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.1rem; margin-bottom: 2.6rem; }
+body.glp .event-photo { margin: 0; aspect-ratio: 3 / 2; overflow: hidden; border-radius: 18px; border: 1px solid rgba(58,114,37,0.28); background: rgba(255,255,255,0.45); }
+body.glp .event-photo img { display: block; width: 100%; height: 100%; object-fit: cover; }
+body.glp .event-card { padding: 2rem 2.2rem; border-radius: 22px; border: 1px solid rgba(58,114,37,0.28); background: rgba(255,255,255,0.45); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); }
+body.glp .event-label { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #a8694a; margin: 0 0 0.5rem; }
+body.glp .event-date { font-size: 1.05rem; color: var(--green-dark); margin: 0 0 0.8rem; }
+body.glp .event-card h3 { font-size: clamp(1.4rem, 2.4vw, 1.9rem); font-weight: 800; letter-spacing: -0.02em; line-height: 1.2; color: var(--green-dark); margin: 0 0 0.4rem; }
+body.glp .event-sub { font-size: 1.05rem; line-height: 1.6; margin: 0 0 1rem; }
+body.glp .event-meta { font-size: 0.95rem; line-height: 1.7; margin: 0; }
+@media (max-width: 700px) {
+  body.glp .event-photos { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.8rem; }
+  body.glp .event-photo:first-child { grid-column: 1 / -1; }
+  body.glp .event-card { padding: 1.5rem 1.4rem; border-radius: 16px; }
+}
+body.glp .event-meta a { color: var(--green-dark); font-weight: 700; text-decoration: underline; text-underline-offset: 3px; }
+body.glp .ziel-link { margin: 1.6rem 0 0; }
+body.glp .ziel-link .btn-glass { border: 1.5px solid var(--green-dark); background: transparent; }

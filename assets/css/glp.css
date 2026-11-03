@@ -573,3 +573,6 @@ body.glp .event-meta { font-size: 0.95rem; line-height: 1.7; margin: 0; }
 body.glp .event-meta a { color: var(--green-dark); font-weight: 700; text-decoration: underline; text-underline-offset: 3px; }
 body.glp .ziel-link { margin: 1.6rem 0 0; }
 body.glp .ziel-link .btn-glass { border: 1.5px solid var(--green-dark); background: transparent; }
+body.glp .event-past { margin-bottom: 1.4rem; }
+body.glp .event-past h3 { font-size: clamp(1.25rem, 2vw, 1.6rem); font-weight: 800; letter-spacing: -0.02em; line-height: 1.25; color: var(--green-dark); margin: 0 0 0.3rem; }
+body.glp .event-past .event-sub { margin: 0; }

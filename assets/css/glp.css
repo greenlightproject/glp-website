@@ -580,3 +580,6 @@ body.glp .event-past .event-sub { margin: 0; }
 /* ---- Buttons: all primary buttons use the outlined style ("Zu den Workshops") ---- */
 body.glp .btn-primary { background: transparent; color: var(--green-dark); border: 1.5px solid var(--green-dark); }
 body.glp .btn-primary:hover { background: rgba(247,244,238,0.85); color: var(--green-dark); border-color: var(--green-dark); text-decoration: none; transform: translateY(-1px); }
+body.glp .event-past-card { padding: 2rem 2.2rem; border-radius: 22px; border: 1px solid rgba(58,114,37,0.28); margin-bottom: 2.6rem; }
+body.glp .event-past-card .event-photos { margin-bottom: 0; }
+@media (max-width: 700px) { body.glp .event-past-card { padding: 1.5rem 1.4rem; border-radius: 16px; margin-bottom: 2rem; } }

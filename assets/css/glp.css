@@ -555,7 +555,7 @@ body.glp h2.glp-title.solid em { color: inherit; -webkit-text-stroke: 0; }
 }
 
 /* ---- Vorträge & Wissen (Startseite) ---- */
-body.glp .g-events .intro { max-width: 40rem; margin-bottom: 2.4rem; }
+body.glp .g-events .intro { max-width: none; margin-bottom: 2.4rem; }
 body.glp .event-photos { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.1rem; margin-bottom: 2.6rem; }
 body.glp .event-photo { margin: 0; aspect-ratio: 3 / 2; overflow: hidden; border-radius: 18px; border: 1px solid rgba(58,114,37,0.28); background: rgba(255,255,255,0.45); }
 body.glp .event-photo img { display: block; width: 100%; height: 100%; object-fit: cover; }

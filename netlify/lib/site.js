@@ -15,6 +15,7 @@ export const PAGES = [
   { de: '/mitmachen/', en: '/en/get-involved/' },
   { de: '/partner/', en: '/en/partners/' },
   { de: '/ueber-uns/', en: '/en/about-us/' },
+  { de: '/workshops-fuer-schulen/', en: '/en/workshops-for-schools/' },
   { de: '/kontakt/', en: '/en/contact/' },
   { de: '/blog/', en: '/en/blog/' },
   { de: '/datenschutz/', en: '/en/privacy/' },

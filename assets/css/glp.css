@@ -127,8 +127,8 @@ body.glp { --text-primary: #2b3f35; --text-secondary: #2f4a3a; }
 body.glp .footer-col h5, body.glp .footer-copy { color: #2b3f35; }
 
 /* headline typography: condensed poster type, first word solid, second word outlined */
-body.glp h2.glp-title { font-family: 'Anton', 'Impact', sans-serif; font-weight: 400; text-transform: uppercase; letter-spacing: 0.012em; line-height: 1; font-size: clamp(2.5rem, 4.8vw, 4.2rem); color: #2b3f35; margin-bottom: 1.5rem; }
-body.glp h2.glp-title em { font-style: normal; color: transparent; -webkit-text-stroke: 1.5px #2b3f35; }
+body.glp h1.glp-title, body.glp h2.glp-title { font-family: 'Anton', 'Impact', sans-serif; font-weight: 400; text-transform: uppercase; letter-spacing: 0.012em; line-height: 1; font-size: clamp(2.5rem, 4.8vw, 4.2rem); color: #2b3f35; margin-bottom: 1.5rem; }
+body.glp h1.glp-title em, body.glp h2.glp-title em { font-style: normal; color: transparent; -webkit-text-stroke: 1.5px #2b3f35; }
 body.glp .manifest { color: #2b3f35; }
 
 /* headline + text on one side, graphic on the other */
@@ -162,7 +162,7 @@ body.glp footer { margin-top: -7rem; padding-top: 7rem; background: linear-gradi
 }
 
 /* ===== round 10 ===== */
-body.glp h2.glp-title { line-height: 1.14; }
+body.glp h1.glp-title, body.glp h2.glp-title { line-height: 1.14; }
 body.glp .g-ziel .manifest em, body.glp .g-ziel .body em { font-style: normal; }
 
 /* hero sub-line: curvy italic, flanked by short rules */
@@ -247,7 +247,7 @@ body.glp .hero { padding-bottom: 5rem; }
   body.glp .split.rev .art { order: 0; grid-column: 1; grid-row: 1; }
   body.glp .split.rev .art img { max-width: 5.6rem; max-height: 8rem; width: auto; margin: 0; }
   body.glp .split.rev .txt { display: contents; }
-  body.glp .split.rev .txt h2 { grid-column: 2; grid-row: 1; margin: 0; }
+  body.glp .split.rev .txt h1, body.glp .split.rev .txt h2 { grid-column: 2; grid-row: 1; margin: 0; }
   body.glp .split.rev .txt p { grid-column: 1 / -1; }
 
   /* WHO note: no icon */
@@ -541,3 +541,18 @@ body.glp .related-card { display: flex; flex-direction: column; gap: 0.5rem; pad
 body.glp .related-card:hover { border-color: var(--green-deep); transform: translateY(-2px); text-decoration: none; }
 body.glp .related-tag { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #a8694a; }
 body.glp .related-title { font-size: 1rem; font-weight: 700; line-height: 1.4; color: var(--green-dark); }
+
+/* ---- Workshops für Schulen ---- */
+body.glp .g-work-first { padding-top: 9.5rem; }
+body.glp .flex-split { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 3.5rem; align-items: center; }
+body.glp .work-photo { margin: 0; border-radius: 22px; overflow: hidden; border: 1px solid rgba(58,114,37,0.28); aspect-ratio: 4 / 3; background: rgba(255,255,255,0.45); }
+body.glp .work-photo img { display: block; width: 100%; height: 100%; object-fit: cover; }
+body.glp .flex-txt h2 { margin-bottom: 1.2rem; }
+body.glp .flex-list { list-style: none; margin: 0 0 1.8rem; padding: 0; display: flex; flex-direction: column; gap: 0.9rem; }
+body.glp .flex-list li { font-size: 1rem; line-height: 1.65; }
+body.glp .flex-list strong { color: var(--green-dark); font-weight: 800; }
+@media (max-width: 900px) {
+  body.glp .g-work-first { padding-top: 8rem; }
+  body.glp .flex-split { grid-template-columns: 1fr; gap: 2rem; }
+  body.glp .work-photo { aspect-ratio: 4 / 3; border-radius: 16px; }
+}
